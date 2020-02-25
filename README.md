@@ -9,3 +9,19 @@ We will be using [Deadpool postgres ](https://crates.io/crates/deadpool-postgres
 
 ## Working with Postgres JSONB
 For json postgres example [click here](https://github.com/saiumesh535/actix-server/tree/master/src/Json)
+
+## Roadmap
+
+| Feature  | Status | Source |
+| ------------- | ------------- | ------------- |
+| Postgres Pool  | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/blob/master/src/main.rs#L15)
+| Postgres JSON(B)  | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/tree/master/src/Json) |
+| Authentication | :x:  | :x: |
+| Authorization | :x:  | :x: |
+| Middleware | :x:  | :x: |
+| Redis | :x:  | :x: |
+| Email | :x:  | :x: |
+| Download Files | :x:  | :x: |
+
+## Contribution
+I'm not sure what to write here will update later :smiley:
