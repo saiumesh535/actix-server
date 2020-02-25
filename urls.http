@@ -1,0 +1,29 @@
+POST http://127.0.0.1:8000/json/json_body
+Content-Type: application/json
+
+{
+  "email": "saiumesh",
+  "input": {
+    "a": 1,
+    "b": 2
+  }
+}
+
+###
+POST http://127.0.0.1:8000/json/insert_json_body
+Content-Type: application/json
+
+{
+  "email": "saiumesh",
+  "input": {
+    "a": 1,
+    "b": 2
+  }
+}
+
+###
+
+GET http://127.0.0.1:8000/json/read_json_body
+Accept: application/json
+
+###
