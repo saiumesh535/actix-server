@@ -4,8 +4,9 @@ The other problems were mostly due to JSON(B) nature of postgres. I did go throu
 
 Some the links, I came across while trying to figure out about pool connection and JSON(B)
 
-https://www.reddit.com/r/rust/comments/bytqu5/actixweb_10_and_tokiopostgres_04_deadlock/
-https://github.com/sfackler/rust-postgres/issues/112
-https://www.reddit.com/r/rust/comments/clv6ou/how_to_deserialize_queried_postgres_rows_into_json/
+[actixweb_10_and_tokiopostgres_04_deadlock](https://www.reddit.com/r/rust/comments/bytqu5/actixweb_10_and_tokiopostgres_04_deadlock/) </br>
+[rust-postgres/issues/112](https://github.com/sfackler/rust-postgres/issues/112) </br>
+[how_to_deserialize_queried_postgres_rows_into_json](https://www.reddit.com/r/rust/comments/clv6ou/how_to_deserialize_queried_postgres_rows_into_json/) </br>
 
 ## refer json-url.http for example URL(s)
+[click here for json-urls](https://github.com/saiumesh535/actix-server/blob/master/http/json-url.http)
