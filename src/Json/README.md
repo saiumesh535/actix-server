@@ -1,6 +1,6 @@
-Building web server using actix is fairly simple but, working with Postgres database is not. when I started working with postgres, I had some problems such as application getting hung and Database connection was only synchronous though framework itself is async.
+Building a web server using actix is fairly simple but, working with the Postgres database is not. when I started working with Postgres, I had some problems such as application getting hung and Database connection was only synchronous though the framework itself is async.
 
-The other problems were mostly due to JSON(B) nature of postgres. I did go through some links which were helpful but, took me lot of time. So, I decided to create project which uses postgres pool connection and also some working examples with JSONB
+The other problems were mostly due to the JSON(B) nature of Postgres. I did go through some links which were helpful but, took me a lot of time. So, I decided to create a project which uses Postgres pool connection and also some working examples with JSONB
 
 Some the links, I came across while trying to figure out about pool connection and JSON(B)
 
