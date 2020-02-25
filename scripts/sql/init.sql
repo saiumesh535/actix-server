@@ -5,5 +5,3 @@ CREATE TABLE users (
    email VARCHAR NOT NULL,
    input JSONB NOT NULL
 );
-
-
