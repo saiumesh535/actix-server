@@ -23,6 +23,7 @@ For JSON Postgres example [click here](https://github.com/saiumesh535/actix-serv
 | Redis | :x:  | :x: |
 | Email | :x:  | :x: |
 | Download Files | :x:  | :x: |
+| Validations | :x:  | :x: |
 
 ## Contribution
 I'm not sure what to write here, will update later :smiley:
