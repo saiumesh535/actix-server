@@ -38,7 +38,7 @@ pub async fn insert_json_body(body: Json<JsonInput>, db: Data<Pool>) -> impl Res
     let json_input = to_value(body.0.input).unwrap();
     // get database pool
     let pool = db.get().await.unwrap();
-    pool.query("INSERT INTO users (email, input) VALUES ($1, $2)", &[&body.0.email, &json_input]).await.unwrap();
+    pool.query("INSERT INTO json_table (email, input) VALUES ($1, $2)", &[&body.0.email, &json_input]).await.unwrap();
     HttpResponse::Ok().json(JsonInput{
         email: body.0.email,
         input: json_input
@@ -53,7 +53,7 @@ pub async fn insert_json_body(body: Json<JsonInput>, db: Data<Pool>) -> impl Res
 pub async fn read_json_from_db(db: Data<Pool>) -> impl Responder {
     // get database pool
     let pool = db.get().await.unwrap();
-    let rows = pool.query("SELECT email, input from users", &[]).await.unwrap();
+    let rows = pool.query("SELECT email, input from json_table", &[]).await.unwrap();
 
     // as input is of Type JSONB, we need to convert that into json
     let mut response: Vec<JsonInput> = vec![];
