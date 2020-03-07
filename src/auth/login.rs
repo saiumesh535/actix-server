@@ -2,7 +2,7 @@ use actix_web::{HttpResponse, Responder, web::Json};
 use serde::{ Serialize, Deserialize };
 use actix_web::web::Data;
 use deadpool_postgres::Pool;
-use crate::utils::response::{ErrorResponse, LoginResponse, SuccessResponse};
+use crate::utils::response::{ErrorResponse, LoginResponse};
 use crate::utils::password_hash::verify_password;
 use crate::utils::uuid_utils::get_uuid;
 use crate::utils::redis_utils::{RedisClient, set_redis};
