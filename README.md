@@ -20,7 +20,7 @@ For JSON Postgres example [click here](https://github.com/saiumesh535/actix-serv
 | Authentication | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/6) |
 | Authorization | :x:  | :x: |
 | Middleware | :x:  | :x: |
-| Redis | :x:  | :x: |
+| Redis | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/6) |
 | Email | :x:  | :x: |
 | Download Files | :x:  | :x: |
 | Validations | :x:  | :x: |
