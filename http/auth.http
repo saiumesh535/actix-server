@@ -1,0 +1,19 @@
+POST http://127.0.0.1:8000/auth/login
+Content-Type: application/json
+
+{
+  "email": "d.sai535@gmail.com",
+  "password": "sasas"
+}
+
+###
+POST http://127.0.0.1:8000/auth/register
+Content-Type: application/json
+
+{
+  "username": "saiumesh",
+  "email": "d.sai535@gmail.com",
+  "password": "sasas"
+}
+
+###
