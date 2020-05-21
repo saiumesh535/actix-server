@@ -16,7 +16,7 @@ For JSON Postgres example [click here](https://github.com/saiumesh535/actix-serv
 | ------------- | ------------- | ------------- |
 | Postgres Pool  | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/blob/master/src/main.rs#L15)
 | Postgres JSON(B)  | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/tree/master/src/Json) |
-| Error handling | :x:  | :x: |
+| Error handling | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/8/files) |
 | Authentication | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/6) |
 | Authorization | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/7) |
 | Middleware | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/7) |
