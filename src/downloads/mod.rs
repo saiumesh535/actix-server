@@ -1,5 +1,5 @@
 use crate::utils::errors;
-use actix_files::{ NamedFile, Files };
+use actix_files::{Files, NamedFile};
 use actix_web::http::header::{ContentDisposition, DispositionType};
 use actix_web::{
     web::{get, scope, Path as ReqPath},
@@ -28,6 +28,6 @@ async fn download_file(info: ReqPath<Info>) -> Result<NamedFile, Error> {
 
 pub fn register_download_routes() -> Scope {
     scope("/download")
-    .route("/file/{file_name}", get().to(download_file))
-    .service(Files::new("/directory", "http").show_files_listing())
+        .route("/file/{file_name}", get().to(download_file))
+        .service(Files::new("/directory", "http").show_files_listing())
 }
