@@ -22,6 +22,10 @@ mod middleware;
 
 // errors example
 mod errors;
+
+// downloads
+mod downloads;
+
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     // loading .env file
@@ -43,6 +47,7 @@ async fn main() -> std::io::Result<()> {
             .service(auth::auth_routes())
             .service(Json::json_routes())
             .service(errors::register_error_handlers())
+            .service(downloads::register_download_routes())
             .service(private::register_private().wrap(middleware::private::CheckToken))
     })
     .bind("127.0.0.1:8000")?
