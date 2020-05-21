@@ -18,7 +18,7 @@ For JSON Postgres example [click here](https://github.com/saiumesh535/actix-serv
 | Postgres JSON(B)  | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/tree/master/src/Json) |
 | Error handling using Snafu | :x:  | :x: |
 | Authentication | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/6) |
-| Authorization | :x:  | :x: |
+| Authorization | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/7) |
 | Middleware | :x:  | :x: |
 | Redis | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/6) |
 | Email | :x:  | :x: |
