@@ -1,0 +1,8 @@
+GET http://127.0.0.1:8000/private/
+Content-Type: application/json
+Authorization: abef35bd-cc80-4514-82c1-1d00e3e3205c
+
+{
+  "email": "d.sai535@gmail.com",
+  "password": "sasas"
+}

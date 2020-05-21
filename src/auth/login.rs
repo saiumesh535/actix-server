@@ -36,7 +36,6 @@ pub async fn user_login(body: Json<UserLogin>, db: Data<Pool>, redis: Data<Redis
     let token_payload = to_value(UserLoginToken {
         id: rows.get(0).unwrap().get("id"),
         email: rows.get(0).unwrap().get("email"),
-
     }).unwrap().to_string();
     set_redis::<String>(redis, &token, token_payload);
     HttpResponse::Ok().json(LoginResponse{
