@@ -1,0 +1,6 @@
+GET http://127.0.0.1:8000/error/default/Cargo.tomls
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/error/custom/Cargo.toml
+Accept: application/json
