@@ -36,4 +36,6 @@ futures = "0.3.4"
 
 # for errors
 thiserror = "1.0.18"
+
+# for files download and static files
 actix-files = "0.2.1"
