@@ -125,6 +125,7 @@ dependencies = [
  "actix-web",
  "deadpool-postgres",
  "dotenv",
+ "futures",
  "r2d2",
  "r2d2_redis",
  "rust-argon2",
