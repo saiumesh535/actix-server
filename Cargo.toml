@@ -39,3 +39,7 @@ thiserror = "1.0.18"
 
 # for files download and static files
 actix-files = "0.2.1"
+
+# email
+lettre = "0.9.3"
+lettre_email = "0.9.4"
