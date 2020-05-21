@@ -1,0 +1,6 @@
+GET http://127.0.0.1:8000/download/file/Cargo.toml
+Content-Type: application/json
+
+###
+GET http://127.0.0.1:8000/download/directory
+Content-Type: application/json
