@@ -26,6 +26,8 @@ mod errors;
 // downloads
 mod downloads;
 
+mod email;
+
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     // loading .env file
@@ -47,6 +49,7 @@ async fn main() -> std::io::Result<()> {
             .service(auth::auth_routes())
             .service(Json::json_routes())
             .service(errors::register_error_handlers())
+            .service(email::register_email_routes())
             .service(downloads::register_download_routes())
             .service(private::register_private().wrap(middleware::private::CheckToken))
     })
