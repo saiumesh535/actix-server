@@ -1,16 +1,16 @@
-use serde::{ Serialize, Deserialize };
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct SuccessResponse<T> {
-    pub payload: T
+    pub payload: T,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ErrorResponse {
-    pub message: String
+    pub message: String,
 }
 
 #[derive(Debug, Serialize)]
 pub struct LoginResponse {
-    pub token: String
+    pub token: String,
 }

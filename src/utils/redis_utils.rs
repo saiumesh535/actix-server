@@ -1,16 +1,14 @@
+use actix_web::web::Data;
+use r2d2::Pool;
+use r2d2_redis::redis::{cmd, RedisResult, ToRedisArgs};
 use r2d2_redis::{r2d2, RedisConnectionManager};
 use std::env::var;
-use r2d2::Pool;
-use r2d2_redis::redis::{cmd, ToRedisArgs, RedisResult};
-use actix_web::web::Data;
 
 pub type RedisClient = Pool<RedisConnectionManager>;
 
 pub fn connect_redis() -> RedisClient {
     let manager = RedisConnectionManager::new(var("REDIS_URL").unwrap()).unwrap();
-    let pool = r2d2::Pool::builder()
-        .build(manager)
-        .unwrap();
+    let pool = r2d2::Pool::builder().build(manager).unwrap();
     pool
 }
 

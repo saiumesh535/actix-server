@@ -1,9 +1,8 @@
-
-use dotenv;
-use actix_web::{App, HttpServer };
-use deadpool_postgres::{Config};
-use tokio_postgres::{NoTls};
 use crate::utils::redis_utils::connect_redis;
+use actix_web::{App, HttpServer};
+use deadpool_postgres::Config;
+use dotenv;
+use tokio_postgres::NoTls;
 
 // json - postgres example
 mod Json;
@@ -12,15 +11,14 @@ mod Json;
 mod auth;
 
 mod models;
-mod utils;
 mod types;
+mod utils;
 
 // private routes
 mod private;
 
 // middleware
 mod middleware;
-
 
 // errors example
 mod errors;
@@ -45,7 +43,9 @@ async fn main() -> std::io::Result<()> {
             .service(auth::auth_routes())
             .service(Json::json_routes())
             .service(errors::register_error_handlers())
-            .service(private::register_private()
-                .wrap(middleware::private::CheckToken))
-    }).bind("127.0.0.1:8000")?.run().await
+            .service(private::register_private().wrap(middleware::private::CheckToken))
+    })
+    .bind("127.0.0.1:8000")?
+    .run()
+    .await
 }

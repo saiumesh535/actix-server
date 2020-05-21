@@ -1,4 +1,7 @@
-use actix_web::{web::{ scope, post }, Scope};
+use actix_web::{
+    web::{post, scope},
+    Scope,
+};
 
 pub mod login;
 pub mod register;

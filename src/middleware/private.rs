@@ -1,18 +1,18 @@
 use std::task::{Context, Poll};
 
-use actix_web::dev::{ServiceRequest, ServiceResponse, Transform, Service};
+use crate::utils::redis_utils::{get_redis, RedisClient};
+use actix_web::dev::{Service, ServiceRequest, ServiceResponse, Transform};
+use actix_web::web::Data;
 use actix_web::{Error, HttpResponse};
 use futures::future::{ok, Either, Ready};
-use actix_web::web::Data;
-use r2d2_redis::redis::{RedisResult};
-use crate::utils::redis_utils::{RedisClient, get_redis};
+use r2d2_redis::redis::RedisResult;
 
 pub struct CheckToken;
 
 impl<S, B> Transform<S> for CheckToken
-    where
-        S: Service<Request = ServiceRequest, Response = ServiceResponse<B>, Error = Error>,
-        S::Future: 'static,
+where
+    S: Service<Request = ServiceRequest, Response = ServiceResponse<B>, Error = Error>,
+    S::Future: 'static,
 {
     type Request = ServiceRequest;
     type Response = ServiceResponse<B>;
@@ -36,9 +36,9 @@ pub fn verify_token(req: &ServiceRequest, token: &str) -> RedisResult<String> {
 }
 
 impl<S, B> Service for CheckTokenMiddleware<S>
-    where
-        S: Service<Request = ServiceRequest, Response = ServiceResponse<B>, Error = Error>,
-        S::Future: 'static,
+where
+    S: Service<Request = ServiceRequest, Response = ServiceResponse<B>, Error = Error>,
+    S::Future: 'static,
 {
     type Request = ServiceRequest;
     type Response = ServiceResponse<B>;
@@ -68,6 +68,5 @@ impl<S, B> Service for CheckTokenMiddleware<S>
         } else {
             Either::Left(self.service.call(req))
         }
-
     }
 }
