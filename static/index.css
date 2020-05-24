@@ -1,0 +1,14 @@
+html,
+body {
+    background-color: wheat;
+}
+
+h1#header {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
