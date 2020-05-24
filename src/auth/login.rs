@@ -25,14 +25,14 @@ pub async fn user_login(
     let pool = db.get().await.unwrap();
     let rows = pool.query(query, &[&user.email]).await.unwrap();
     if rows.is_empty() {
-        return HttpResponse::Ok().json(ErrorResponse {
+        return HttpResponse::BadRequest().json(ErrorResponse {
             message: String::from("check username and password"),
         });
     }
     let hash: String = rows.get(0).unwrap().get("password");
     let is_password_matches = verify_password(&hash, &user.password);
     if !is_password_matches {
-        return HttpResponse::Ok().json(ErrorResponse {
+        return HttpResponse::BadRequest().json(ErrorResponse {
             message: String::from("check username and password"),
         });
     }
