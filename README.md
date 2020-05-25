@@ -23,7 +23,6 @@ For JSON Postgres example [click here](https://github.com/saiumesh535/actix-serv
 | Redis | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/6) |
 | Email | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/10) |
 | Static Files | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/11/files) |
-| Validations | :x:  | :x: |
 | Download  Files | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/9/files) |
 | Validations | :x:  | :x: |
 
