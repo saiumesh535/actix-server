@@ -56,6 +56,7 @@ async fn main() -> std::io::Result<()> {
             .service(private::register_private().wrap(middleware::private::CheckToken))
             .service(Files::new("/", "static").index_file("index.html"))
     })
+    .keep_alive(75)
     .bind("127.0.0.1:8000")?
     .run()
     .await

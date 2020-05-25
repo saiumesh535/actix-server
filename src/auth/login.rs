@@ -43,6 +43,6 @@ pub async fn user_login(
     })
     .unwrap()
     .to_string();
-    set_redis::<String>(redis, &token, token_payload);
+    set_redis::<String>(redis, &token, token_payload, None);
     HttpResponse::Ok().json(LoginResponse { token })
 }
