@@ -6,6 +6,9 @@ use std::env::var;
 
 pub type RedisClient = Pool<RedisConnectionManager>;
 
+/**
+ default expire time for redis -> 8h in seconds
+*/
 pub fn get_login_key_expire() -> i64 {
     28800
 }
