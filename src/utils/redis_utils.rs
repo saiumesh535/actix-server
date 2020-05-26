@@ -22,10 +22,18 @@ pub fn connect_redis() -> RedisClient {
 /**
 expire time is in seconds and default is 8h
 */
-pub fn set_redis<T: ToRedisArgs>(client: Data<RedisClient>, key: &String, payload: T, expire: Option<i64>) {
+pub fn set_redis<T: ToRedisArgs>(
+    client: Data<RedisClient>,
+    key: &String,
+    payload: T,
+    expire: Option<i64>,
+) {
     let mut pool = client.get().unwrap();
     cmd("SET").arg(key).arg(payload).execute(&mut *pool);
-    cmd("EXPIRE").arg(key).arg(expire.unwrap_or(get_login_key_expire())).execute(&mut *pool);
+    cmd("EXPIRE")
+        .arg(key)
+        .arg(expire.unwrap_or(get_login_key_expire()))
+        .execute(&mut *pool);
 }
 
 pub fn get_redis(client: Data<RedisClient>, token: &str) -> RedisResult<String> {
