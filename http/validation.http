@@ -1,0 +1,6 @@
+POST http://127.0.0.1:8000/validation/user
+Content-Type: application/json
+
+{
+  "email": "d.sai535@gmail.com"
+}

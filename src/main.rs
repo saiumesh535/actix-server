@@ -1,6 +1,10 @@
+#[macro_use]
+extern crate validator_derive;
+extern crate validator;
+
 use crate::utils::redis_utils::connect_redis;
 use actix_files::Files;
-use actix_web::{middleware::Compress, App, HttpServer};
+use actix_web::{middleware::Compress, web, App, FromRequest, HttpServer};
 use deadpool_postgres::Config;
 use dotenv;
 use tokio_postgres::NoTls;
@@ -29,6 +33,8 @@ mod downloads;
 
 mod email;
 
+mod validations;
+
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     // loading .env file
@@ -45,6 +51,10 @@ async fn main() -> std::io::Result<()> {
     // actix server
     HttpServer::new(move || {
         App::new()
+            // you can replace () this with any specific struct type
+            .app_data(web::Json::<()>::configure(|cfg| {
+                cfg.error_handler(validations::json_error_handler)
+            }))
             .data(pool.clone())
             .data(redis_client.clone())
             .wrap(Compress::default())
@@ -54,6 +64,7 @@ async fn main() -> std::io::Result<()> {
             .service(email::register_email_routes())
             .service(downloads::register_download_routes())
             .service(private::register_private().wrap(middleware::private::CheckToken))
+            .service(validations::register_validation_routes())
             .service(Files::new("/", "static").index_file("index.html"))
     })
     .keep_alive(75)

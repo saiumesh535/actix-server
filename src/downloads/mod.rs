@@ -3,7 +3,7 @@ use actix_files::{Files, NamedFile};
 use actix_web::http::header::{ContentDisposition, DispositionType};
 use actix_web::{
     web::{get, scope, Path as ReqPath},
-    Error, HttpResponse, Scope,
+    Error, Scope,
 };
 use serde::Deserialize;
 use std::path::Path;

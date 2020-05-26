@@ -1,6 +1,6 @@
 use crate::utils::email_sender;
 use actix_web::{
-    web::{get, route, scope, Path},
+    web::{get, scope, Path},
     HttpResponse, Scope,
 };
 use std::fs::read_to_string;

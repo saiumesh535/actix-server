@@ -157,6 +157,8 @@ dependencies = [
  "thiserror",
  "tokio-postgres",
  "uuid 0.8.1",
+ "validator",
+ "validator_derive",
 ]
 
 [[package]]
@@ -1149,6 +1151,12 @@ dependencies = [
  "unicode-bidi",
  "unicode-normalization",
 ]
+
+[[package]]
+name = "if_chain"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c3360c7b59e5ffa2653671fb74b4741a5d343c03f331c0a4aeda42b5c2b0ec7d"
 
 [[package]]
 name = "indexmap"
@@ -2438,6 +2446,36 @@ checksum = "e33e939c0d8cf047514fb6ba7d5aac78bc56677a6938b2ee67000b91f2e97e41"
 dependencies = [
  "cfg-if",
  "v_escape",
+]
+
+[[package]]
+name = "validator"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7ab5990ba09102e1ddc954d294f09b9ea00fc7831a5813bbe84bfdbcae44051e"
+dependencies = [
+ "idna",
+ "lazy_static",
+ "regex",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "url",
+]
+
+[[package]]
+name = "validator_derive"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e668e9cd05c5009b833833aa1147e5727b5396ea401f22dd1167618eed4a10c9"
+dependencies = [
+ "if_chain",
+ "lazy_static",
+ "proc-macro2",
+ "quote",
+ "regex",
+ "syn",
+ "validator",
 ]
 
 [[package]]
