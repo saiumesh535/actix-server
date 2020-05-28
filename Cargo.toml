@@ -47,3 +47,8 @@ lettre_email = "0.9.4"
 # validations
 validator = "0.10.0"
 validator_derive = "0.10.0"
+
+
+actix-multipart = "0.2.0"
+async-std = "1.4.0"
+sanitize-filename = "0.2"
