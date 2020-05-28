@@ -35,6 +35,8 @@ mod email;
 
 mod validations;
 
+mod uploads;
+
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     // loading .env file
@@ -44,6 +46,10 @@ async fn main() -> std::io::Result<()> {
     let cfg = Config::from_env("PG").unwrap();
     let pool = cfg.create_pool(NoTls).unwrap();
     pool.get().await.unwrap();
+
+    // creating upload folder
+    async_std::fs::create_dir_all("./uploads").await.unwrap();
+
 
     // redis cache
     let redis_client = connect_redis();
@@ -63,6 +69,7 @@ async fn main() -> std::io::Result<()> {
             .service(errors::register_error_handlers())
             .service(email::register_email_routes())
             .service(downloads::register_download_routes())
+            .service(uploads::register_upload_handlers())
             .service(private::register_private().wrap(middleware::private::CheckToken))
             .service(validations::register_validation_routes())
             .service(Files::new("/", "static").index_file("index.html"))
