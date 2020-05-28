@@ -24,6 +24,7 @@ For JSON Postgres example [click here](https://github.com/saiumesh535/actix-serv
 | Email | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/10) |
 | Static Files | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/11/files) |
 | Download  Files | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/9/files) |
+| Upload  Files | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/14) |
 | Validations | :heavy_check_mark:  | [Link](https://github.com/saiumesh535/actix-server/pull/13/files) |
 
 ## Contribution
